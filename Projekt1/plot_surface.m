@@ -10,6 +10,7 @@ function plot_surface(f, x_range, y_range)
     end
 
     surf(X, Y, Z);
+    colorbar;
     xlabel('$x$', 'Interpreter', 'latex');
     ylabel('$y$', 'Interpreter', 'latex');
     zlabel('$z$', 'Interpreter', 'latex');

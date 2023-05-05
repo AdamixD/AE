@@ -10,6 +10,7 @@ function plot_contour(f, x_range, y_range)
     end
     
     contour(X, Y, Z);
+    colorbar;
     xlabel('$x$', 'Interpreter', 'latex');
     ylabel('$y$', 'Interpreter', 'latex');
 end
