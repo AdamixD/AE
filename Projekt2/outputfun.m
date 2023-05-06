@@ -2,27 +2,36 @@ function [state, options] = outputfun(options, state, flag)
     Skrypt1;
     if isequal(flag,'iter')
         figure(2)
-        plot(state.Generation, min(state.Score), 'r.')
-        plot(state.Generation, max(state.Score), 'g.')
-        plot(state.Generation, mean(state.Score), 'b.')
+        plot(state.Generation, -min(state.Score), 'Marker', '.', 'Color', '#0072BD')
+        plot(state.Generation, -max(state.Score), 'Marker', '.', 'Color', '#77AC30')
+        plot(state.Generation, -mean(state.Score), 'Marker', '.', 'Color', '#EDB120')
 
         figure(3)
-        plot(state.Generation, sum(state.Population.*weights'), 'k.');
+        plot(state.Generation, var(state.Score), 'Marker', '.', 'Color', '#0072BD');
 
     elseif isequal(flag,'init')
         figure(2)
-        title("Score");
+        set(groot,'defaultAxesTickLabelInterpreter','latex');
+        
         hold on;
-        xlabel("Generation");
-        plot(state.Generation, min(state.Score), 'r.')
-        plot(state.Generation, max(state.Score), 'g.')
-        plot(state.Generation, mean(state.Score), 'b.')
-        legend('minimum score','maximum score','average score','AutoUpdate','off')
+        
+        title("Wartosc funkcji celu", 'Interpreter', 'latex');
+        xlabel("Pokolenie", 'Interpreter', 'latex');
+        
+        plot(state.Generation, -min(state.Score), 'Marker', '.', 'Color', '#0072BD');
+        plot(state.Generation, -mean(state.Score), 'Marker', '.', 'Color', '#EDB120');
+        plot(state.Generation, -max(state.Score), 'Marker', '.', 'Color', '#77AC30');
+
+        legend('maksimum','srednia','minimum','AutoUpdate','off', 'Interpreter', 'latex', 'Location','southeast');
+        
         hold on;
 
         figure(3)
-        title("Weight of backpack");
-        xlabel("Generation");
+        set(groot,'defaultAxesTickLabelInterpreter','latex');
+        axx = gca;
+        axx.YScale = 'log';
+        title("Wariancja", 'Interpreter', 'latex');
+        xlabel("Pokolenie", 'Interpreter', 'latex');
         hold on;
     end
 end

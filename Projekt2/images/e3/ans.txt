@@ -1,0 +1,4 @@
+Optimization terminated: maximum number of generations exceeded.
+Solution = 0  1  1  0  1  0  1  1  0  1  0  0  0  0  1  1  0  1  0  0  1  1  0  0  1  0  1  0  0  0  1  0
+Total weight = 488
+Total score = 8.7

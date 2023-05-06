@@ -1,0 +1,4 @@
+Optimization terminated: average change in the fitness value less than options.FunctionTolerance.
+Solution = 0  1  0  0  0  0  1  1  0  1  1  0  0  0  1  0  0  1  1  0  1  1  0  0  1  1  1  0  0  1  1  0
+Total weight = 490
+Total score = 9
